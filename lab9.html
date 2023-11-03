@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Lab9</title>
+	<style>
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+article { 
+border-radius: 20% 20px 20% 20px; 
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+width: 300px;
+height: 400px;
+align-items: center;
+border: 2px dashed black;}
+* {transition: 0.5s;}
+	</style>
+</head>
+<body>
+<article>
+<p>background</p>
+	<div>
+		<input type="text" id="back">
+		<input type="button" value="Ok" onclick="background()">
+	</div>
+<p>text</p>
+	<div>
+		<input type="text" id="txt">
+		<input type="button" value="Ok" onclick="text()">
+	</div>
+<p>link</p>
+	<div>
+		<input type="text" id="link">
+		<input type="button" value="Ok" onclick="link()">
+	</div>
+	<a href="#">Ссылка</a>
+	<a href="#">Ссылка1</a>
+</article>
+<script>
+function background(){
+let valuee = document.getElementById('back').value;
+document.getElementsByTagName('article')[0].style.backgroundColor = valuee;
+}
+
+function text(){
+let valuee = document.getElementById('txt').value;
+let txt = document.getElementsByTagName('p');
+for (let elem of txt){
+elem.style.color = valuee;
+}}
+
+function link(){
+let valuee = document.getElementById('link').value;
+let link = document.links;
+for (let elem of link){
+elem.innerText = valuee;
+elem.setAttribute('href', valuee);
+}}
+</script>
+</body>
+</html>
